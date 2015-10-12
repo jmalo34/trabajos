@@ -3,11 +3,15 @@ class Trabajo
 {
     private $title;
     private $duties;
+    private $company;
+    private $location;
 
-    function __construct($title, $duties)
+    function __construct($title, $duties, $company, $location)
     {
         $this->title = $title;
         $this->duties = $duties;
+        $this->company = $company;
+        $this->location = $location;
     }
 
     function setTitle($new_title)
@@ -28,6 +32,26 @@ class Trabajo
     function getDuties()
     {
         return $this->duties;
+    }
+
+    function setCompany($new_company)
+    {
+        $this->company = $new_company;
+    }
+
+    function getCompany()
+    {
+        return $this->company;
+    }
+
+    function setLocation($new_location)
+    {
+        $this->location = $new_location;
+    }
+
+    function getLocation()
+    {
+        return $this->location;
     }
 
     function save()

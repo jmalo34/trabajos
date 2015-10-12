@@ -20,7 +20,7 @@
 
     $app->post("/trabajos", function () use ($app)
     {
-        $trabajo = new Trabajo($_POST['title'], $_POST['duties']);
+        $trabajo = new Trabajo($_POST['title'], $_POST['duties'], $_POST['company'], $_POST['location']);
         $trabajo->save();
 
         return $app['twig']->render('create_trabajo.html.twig', array('uno_mas' => $trabajo));
