@@ -20,13 +20,13 @@
 
     $app->post("/trabajos", function () use ($app)
     {
-        $trabajo = new Trabajo($_POST['title']);
+        $trabajo = new Trabajo($_POST['title'], $_POST['duties']);
         $trabajo->save();
 
         return $app['twig']->render('create_trabajo.html.twig', array('uno_mas' => $trabajo));
     });
 
-    $app->get("/delete_trabajos", function () use ($app)
+    $app->post("/delete_trabajos", function () use ($app)
     {
         Trabajo::deleteAll();
 

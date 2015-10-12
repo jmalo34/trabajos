@@ -27,9 +27,16 @@
         {% endif %}
 
         <form action='trabajos' method='post'>
-            <label for='title'>Title</label>
-            <input id='title' name='title' type='text'>
-            <button type='submit'>Add Job</button>
+            <div class='form-group'>
+                <label for='title'>Title</label>
+                <input id='title' name='title' class='form-control' type='text'>
+
+                <label for='duties'>Duties</label>
+                <input id='duties' name='duties' class='form-control' type='text'>
+
+
+                <button type='submit'>Add Job</button>
+            </div>
         </form>
         <form action='delete_trabajos' method='post'>
             <button type='submit'>clear list</button>
