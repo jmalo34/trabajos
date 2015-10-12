@@ -1,25 +1,39 @@
 <html>
 <head>
     <title>Mis Trabajos</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap.min.css'>
 </head>
 <body>
-    <h1>Jobs You've Had</h1>
-    {% if trabajos is not empty %}
-    <h2>Here is a list of Jobs You've Had</h2>
-        {% for trabajo in trabajos %}
-            <h3>{{ trabajo.getTitle }}</h3>
-            <ul>
-            </ul>
-        {% endfor %}
-    {% endif %}
+    <div class='container'>
+        <h1>Jobs You've Had</h1>
+        {% if trabajos is not empty %}
+        <h2>Here is a list of Jobs You've Had</h2>
+            {% for trabajo in trabajos %}
+                <ul>
+                    <li>
+                    <address>
+                        <strong>{{ trabajo.getTitle }}</strong>
+                        <br>
+                        {{ trabajo.getDuties }}
+                        <br>
+                        {{ trabajo.getCompany }}
+                        <br>
+                        {{ trabajo.getLocation }}
+                        <br>
+                    </address>
+                    </li>
+                </ul>
+            {% endfor %}
+        {% endif %}
 
-    <form action='trabajos' method='post'>
-        <label for='title'>Title</label>
-        <input id='title' name='title' type='text'>
-        <button type='submit'>Add this Job</button>
-    </form>
-    <form action='delete_trabajos' method='post'>
-        <button type='submit'>clear list</button>
-    </form>
-</body>        
+        <form action='trabajos' method='post'>
+            <label for='title'>Title</label>
+            <input id='title' name='title' type='text'>
+            <button type='submit'>Add Job</button>
+        </form>
+        <form action='delete_trabajos' method='post'>
+            <button type='submit'>clear list</button>
+        </form>
+    </div>
+</body>
 </html>
