@@ -1,5 +1,5 @@
 <?php
-class Trabajo
+class Job
 {
     private $title;
     private $duties;

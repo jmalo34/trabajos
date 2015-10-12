@@ -1,6 +1,6 @@
 <?php
     require_once __DIR__."/../vendor/autoload.php";
-    require_once __DIR__."/../src/Trabajo.php";
+    require_once __DIR__."/../src/Job.php";
 
     session_start();
 
@@ -15,12 +15,12 @@
 
     $app->get("/", function() use ($app)
     {
-        return $app['twig']->render('trabajos.html.twig', array('trabajos' => Trabajo::getAll()));
+        return $app['twig']->render('trabajos.html.twig', array('trabajos' => Job::getAll()));
     });
 
     $app->post("/trabajos", function () use ($app)
     {
-        $trabajo = new Trabajo($_POST['title'], $_POST['duties'], $_POST['company'], $_POST['location']);
+        $trabajo = new Job($_POST['title'], $_POST['duties'], $_POST['company'], $_POST['location']);
         $trabajo->save();
 
         return $app['twig']->render('create_trabajo.html.twig', array('uno_mas' => $trabajo));
@@ -28,7 +28,7 @@
 
     $app->post("/delete_trabajos", function () use ($app)
     {
-        Trabajo::deleteAll();
+        Job::deleteAll();
 
         return $app['twig']->render('delete_trabajos.html.twig');
     });
