@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Mis Trabajos</title>
+</head>
+<body>
+    <h1>Jobs You've Had</h1>
+    {% if trabajos is not empty %}
+    <h2>Here is a list of Jobs You've Had</h2>
+        {% for trabajo in trabajos %}
+            <h3>{{ trabajo.getTitle }}</h3>
+            <ul>
+            </ul>
+        {% endfor %}
+    {% endif %}
+
+    <form action='trabajos' method='post'>
+        <label for='title'>Title</label>
+        <input id='title' name='title' type='text'>
+        <button type='submit'>Add this Job</button>
+    </form>
+    <form action='delete_trabajos' method='post'>
+        <button type='submit'>clear list</button>
+    </form>
+</body>        
+</html>
