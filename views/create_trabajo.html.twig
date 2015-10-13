@@ -1,10 +1,18 @@
 <html>
 <head>
     <title>Mis Trabajos</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
 </head>
 <body>
-    <h1>You've successfully added another job to the list of Jobs You've Had</h1>
-    <p>{{ newtrabajo.getTitle }}</p>
-    <p><a href='/'>See all the Jobs You've Had</a></p>
+    <div class='container'>
+        <h2>You've successfully added the job displayed below, to the list of Jobs You've Had</h2>
+        <address>
+        <strong>{{ uno_mas.getTitle }}</strong><br>
+        {{ uno_mas.getDuties }}<br>
+        {{ uno_mas.getCompany }}<br>
+        {{ uno_mas.getLocation }}
+        </address>
+        <p><a href='/'>See all the Jobs You've Had</a></p>
+    </div>
 </body>
 </html>
